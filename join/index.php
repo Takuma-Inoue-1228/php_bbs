@@ -5,6 +5,9 @@ if($_POST['name'] === ''){
 if($_POST['email'] === ''){
 	$erro['email'] = 'blank';
 }
+if (strlen($_POST['password']) < 4){
+	$erro['password'] = 'length';
+}
 if($_POST['password'] === ''){
 	$erro['password'] = 'blank';
 }
@@ -46,6 +49,9 @@ if($_POST['password'] === ''){
 		<dt>パスワード<span class="required">必須</span></dt>
 		<dd>
         	<input type="password" name="password" size="10" maxlength="20" value="<?php print(htmlspecialchars($_POST['password'],ENT_QUOTES)); ?>" />
+					<?php if ($erro['password'] === 'length'): ?>
+						<p class="error"> パスワードは4文字以上で設定してください。</p>
+						<?php endif; ?>
 					<?php if ($erro['password'] === 'blank'): ?>
 						<p class="error"> パスワードを入力してください</p>
 						<?php endif; ?>

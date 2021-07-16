@@ -2,6 +2,12 @@
 if($_POST['name'] === ''){
 	$erro['name'] = 'blank';
 }
+if($_POST['email'] === ''){
+	$erro['email'] = 'blank';
+}
+if($_POST['password'] === ''){
+	$erro['password'] = 'blank';
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,17 +32,23 @@ if($_POST['name'] === ''){
 	<dl>
 		<dt>ニックネーム<span class="required">必須</span></dt>
 		<dd>
-        	<input type="text" name="name" size="35" maxlength="255" value="" />
+        	<input type="text" name="name" size="35" maxlength="255" value="<?php print(htmlspecialchars($_POST['name'],ENT_QUOTES)); ?>" />
 					<?php if ($erro['name'] === 'blank'): ?>
 						<p class="error"> ニックネームを入力してください</p>
 						<?php endif; ?>
 		</dd>
 		<dt>メールアドレス<span class="required">必須</span></dt>
 		<dd>
-        	<input type="text" name="email" size="35" maxlength="255" value="" />
+        	<input type="text" name="email" size="35" maxlength="255" value="<?php print(htmlspecialchars($_POST['email'],ENT_QUOTES)); ?>" />
+					<?php if ($erro['email'] === 'blank'): ?>
+						<p class="error"> メールアドレスを入力してください</p>
+						<?php endif; ?>
 		<dt>パスワード<span class="required">必須</span></dt>
 		<dd>
-        	<input type="password" name="password" size="10" maxlength="20" value="" />
+        	<input type="password" name="password" size="10" maxlength="20" value="<?php print(htmlspecialchars($_POST['password'],ENT_QUOTES)); ?>" />
+					<?php if ($erro['password'] === 'blank'): ?>
+						<p class="error"> パスワードを入力してください</p>
+						<?php endif; ?>
         </dd>
 		<dt>写真など</dt>
 		<dd>

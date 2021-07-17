@@ -20,6 +20,11 @@ if (!empty($_POST)) {
 		exit();
 	}
 }
+
+if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
+	$_POST = $_SESSION['join'];
+}
+
 ?>
 
 <!DOCTYPE html>

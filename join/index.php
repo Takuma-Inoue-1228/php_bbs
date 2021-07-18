@@ -87,6 +87,9 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 						<?php if ($error['image'] === 'type') : ?>
 							<p class="error">写真などはjpg・gif・png・pdfを使用してください。</p>
 						<?php endif; ?>
+						<?php if (!empty($error)) : ?>
+							<p class="error">画像を改めて洗濯してください。</p>
+						<?php endif; ?>
 					</dd>
 				</dl>
 				<div><input type="submit" value="入力内容を確認する" /></div>

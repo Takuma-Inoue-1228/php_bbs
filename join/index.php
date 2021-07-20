@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('../dbconnect.php');
 
 if (!empty($_POST)) {
 	if ($_POST['name'] === '') {
@@ -22,6 +23,17 @@ if (!empty($_POST)) {
 			$error['image'] = 'type';
 		}
 	}
+
+	// アカウント重複のチェック
+	if (empty($error)) {
+		$member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE email=?');
+		$member->execute(array($_POST['email']));
+		$record = $member->fetch();
+		if ($record['cnt'] > 0) {
+				$error['email'] = 'duplicate';
+		}
+	}
+
 	if (empty($error)) {
 		$image = date('Ymdhis') . $_FILES['image']['name'];
 		move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
@@ -71,6 +83,9 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 						<?php if ($error['email'] === 'blank') : ?>
 							<p class="error"> メールアドレスを入力してください</p>
 						<?php endif; ?>
+						<?php if ($error['email'] === 'duplicate') : ?>
+							<p class="error"> 指定されたメールアドレスはすでに登録されています</p>
+						<?php endif; ?>
 					<dt>パスワード<span class="required">必須</span></dt>
 					<dd>
 						<input type="password" name="password" size="10" maxlength="20" value="<?php print(htmlspecialchars($_POST['password'], ENT_QUOTES)); ?>" />
@@ -86,6 +101,9 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 						<input type="file" name="image" size="35" value="test" />
 						<?php if ($error['image'] === 'type') : ?>
 							<p class="error">写真などはjpg・gif・png・pdfを使用してください。</p>
+						<?php endif; ?>
+						<?php if (!empty($error)) : ?>
+							<p class="error">画像を改めて洗濯してください。</p>
 						<?php endif; ?>
 					</dd>
 				</dl>

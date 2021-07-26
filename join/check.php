@@ -16,11 +16,9 @@ if (!empty($_POST)) {
 		$_SESSION['join']['image']
 	));
 	unset($_SESSION['join']);
-
 	header('Location: thanks.php');
 	exit();
 }
-
 ?>
 
 <!DOCTYPE html>

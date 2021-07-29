@@ -70,15 +70,14 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 			<p>次のフォームに必要事項をご記入ください。</p>
 			<form action="" method="post" enctype="multipart/form-data">
 				<dl>
-					<dt>ニックネーム<span class="required">必須</span></dt>
-					<div class="write">※4文字以上の文字で入力してください。</div>
+					<dt>ニックネーム<span class="required">必須（4文字以上）</span></dt>
 					<dd>
 						<input type="text" name="name" size="35" maxlength="255" value="<?php print(htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
 						<?php if ($error['name'] === 'blank') : ?>
 							<p class="error"> ニックネームを入力してください</p>
 						<?php endif; ?>
 					</dd>
-					<dt>メールアドレス<span class="required">必須</span></dt>
+					<dt>メールアドレス<span class="required">必須（4文字以上）</span></dt>
 					<dd>
 						<input type="text" name="email" size="35" maxlength="255" value="<?php print(htmlspecialchars($_POST['email'], ENT_QUOTES)); ?>" />
 						<?php if ($error['email'] === 'blank') : ?>
@@ -87,7 +86,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 						<?php if ($error['email'] === 'duplicate') : ?>
 							<p class="error"> 指定されたメールアドレスはすでに登録されています</p>
 						<?php endif; ?>
-					<dt>パスワード<span class="required">必須</span></dt>
+					<dt>パスワード<span class="required">必須（4文字以上）</span></dt>
 					<dd>
 						<input type="password" name="password" size="10" maxlength="20" value="<?php print(htmlspecialchars($_POST['password'], ENT_QUOTES)); ?>" />
 						<?php if ($error['password'] === 'length') : ?>

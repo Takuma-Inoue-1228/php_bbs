@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../dbconect.php');
+require('../dbc.php');
 
 if (!isset($_SESSION['join'])) {
 	header('Location: index.php');

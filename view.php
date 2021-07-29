@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('dbconect.php');
+require('dbc.php');
 
 if (empty($_REQUEST['id'])) {
   header('Location: index.php');

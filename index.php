@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require('dbconect.php');
+  require('dbc.php');
  
 /* このスクリプトのみ、エラー表示をなくすやつ */
 ini_set('display_errors', 0);

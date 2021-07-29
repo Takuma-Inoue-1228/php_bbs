@@ -71,6 +71,7 @@ if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['join'])) {
 			<form action="" method="post" enctype="multipart/form-data">
 				<dl>
 					<dt>ニックネーム<span class="required">必須</span></dt>
+					<div class="write">※4文字以上の文字で入力してください。</div>
 					<dd>
 						<input type="text" name="name" size="35" maxlength="255" value="<?php print(htmlspecialchars($_POST['name'], ENT_QUOTES)); ?>" />
 						<?php if ($error['name'] === 'blank') : ?>

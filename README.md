@@ -1,5 +1,5 @@
 # PHP_bbs
-https://bbs.takuma.page/login.php
+http://bbs.takuma-inoue.com/
 
 ## 目的
 - 本番環境にデプロイの練習

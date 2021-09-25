@@ -75,7 +75,7 @@ if (!empty($_POST)) {
             <label for="save">次回からは自動的にログインする</label>
           </dd>
         </dl>
-        <div>
+        <div class="submit">
           <input type="submit" value="ログインする" />
         </div>
       </form>

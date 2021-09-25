@@ -39,10 +39,10 @@ if (!empty($_POST)) {
 <?php include 'head.php'; ?>
 
 <body>
+  
   <div class="inc_header">
     <?php require('header.php'); ?>
   </div>
-
   <div id="wrap">
     <div id="head">
       <h1>ログインする</h1>
@@ -81,8 +81,8 @@ if (!empty($_POST)) {
       </form>
     </div>
   </div>
-
   <?php include 'footer.php'; ?>
+
 
 </body>
 

@@ -12,13 +12,26 @@ Code licensed under the BSD License:
 http://developer.yahoo.com/yui/license.html
 version: 2.8.1
 */
-body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+html {
+  box-sizing: border-box;
+  word-break: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+}
+/* 
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:"Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;*font-size:108%;line-height:100%;} */
 
 
 body {
-	background: url(images/bg_main.png) top center repeat-y #eeeeee;
-	color: #333;
+	font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea,button{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:"Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;*font-size:108%;line-height:100%;
+  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: .8px;
+  color: #333;
 }
+
 
 #wrap {
 	width: 802px;
@@ -31,12 +44,14 @@ body {
 	border-bottom: 1px solid #d4d4d4;
 	background: url(images/bg_head.png) bottom left repeat-x #106eb7;
 	color: #fff;
-	padding: 20px;
-	margin-bottom: 20px;
+	padding: 20px ;
+}
+
+#lead {
+	padding: 20px 0 ;
 }
 
 h1 {
-	background: url(images/bg_ttl.png) top left no-repeat;
 	padding-left: 25px;
 	font-size: 197%;
 	font-weight: bold;
@@ -48,12 +63,12 @@ h2 {
 }
 
 #content {
-	padding: 20px;
+	padding: 0 20px;
 	background: url(images/bg_content.png) left bottom no-repeat #ecf7fc;
 	width: 720px;
 	min-height: 490px;
 	margin: 0 auto;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	font-size: 153.9%;
 }
 
@@ -142,4 +157,47 @@ li {
 .msg .day a {
 	font-size: 80%;
 	color: #999;
+}
+
+
+
+.inc_header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.inc_header .header-logo a {
+  color: #333;
+}
+
+.inc_header a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: #1ca9e3;
+  background-color: transparent;
+}
+
+.inc_header .header-nav-item a {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 0;
+  letter-spacing: .05em;
+  color: #333;
+}
+
+.inc_header ul, li {
+  list-style: none;
+}
+
+.footer {
+  padding: 30px;
+  background-color: #333;
+}
+
+.copyright {
+  font-size: 10px;
+  text-align: center;
+  color: #797979;
 }

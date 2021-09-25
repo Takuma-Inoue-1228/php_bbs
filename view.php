@@ -12,19 +12,12 @@ $posts->execute(array($_REQUEST['id']));
 
 ?>
 
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ひとこと掲示板</title>
-
-  <link rel="stylesheet" href="style.css" />
-</head>
+<?php include 'head.php'; ?>
 
 <body>
+  <div class="inc_header">
+    <?php require('header.php'); ?>
+  </div>
   <div id="wrap">
     <div id="head">
       <h1>ひとこと掲示板</h1>
@@ -38,11 +31,14 @@ $posts->execute(array($_REQUEST['id']));
           <p><?php print(htmlspecialchars($post['message'], ENT_QUOTES)); ?><span class="name">（<?php print(htmlspecialchars($post['name'], ENT_QUOTES)); ?>）</span></p>
           <p class="day"><?php print(htmlspecialchars($post['created'], ENT_QUOTES)); ?></p>
         </div>
-      <?php else: ?>
+      <?php else : ?>
         <p>その投稿は削除されたか、URLが間違えています</p>
       <?php endif; ?>
     </div>
   </div>
+
+  <?php include 'footer.php'; ?>
+
 </body>
 
 </html>
